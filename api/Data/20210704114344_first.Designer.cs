@@ -9,14 +9,28 @@ using api.Data;
 namespace api.data
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210628105657_TokBoxTableAdded")]
-    partial class TokBoxTableAdded
+    [Migration("20210704114344_first")]
+    partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.7");
+
+            modelBuilder.Entity("api.Entities.ConnectionCreated", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("connectiondata")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("connectiondata");
+                });
 
             modelBuilder.Entity("api.Entities.TokboxSession", b =>
                 {

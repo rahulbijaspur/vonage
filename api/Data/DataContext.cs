@@ -11,5 +11,7 @@ namespace api.Data
         public DbSet<User> User { get; set; }
         public DbSet<TokboxSession> Session { get; set; }
         public DbSet<TokboxTokens> Tokens { get; set; }
+        public DbSet<ConnectionCreated> connectiondata { get; set; }
+        
     }
 }

@@ -12,7 +12,7 @@ using OpenTokSDK;
 namespace api.Controllers
 {
     [ApiController]
-    [Route("[controller/session]")]
+    [Route("[controller]")]
     public class SessionController : ControllerBase
     {
         private readonly DataContext _context;

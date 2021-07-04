@@ -16,6 +16,20 @@ namespace api.data
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.7");
 
+            modelBuilder.Entity("api.Entities.ConnectionCreated", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("connectiondata")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("connectiondata");
+                });
+
             modelBuilder.Entity("api.Entities.TokboxSession", b =>
                 {
                     b.Property<int>("Id")
