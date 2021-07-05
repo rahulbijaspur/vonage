@@ -88,9 +88,6 @@ namespace api.Controllers
             Archive archive =OpenTok.GetArchive(archiveId);
             return archive.Url;
         }
-
-        
-        // [HttpPost("GetArchiveList")]
         private async Task<bool> UserExists(string username)
         {
             return await _context.User.AnyAsync(x => x.Username == username.ToLower());

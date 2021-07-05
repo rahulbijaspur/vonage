@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using api.Data;
-using api.Dto;
 using api.Entities;
-using api.Interfaces;
-using api.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using OpenTokSDK;
 
 namespace api.Controllers
 {
@@ -34,7 +26,6 @@ namespace api.Controllers
             await _context.AddAsync(user);
             await _context.SaveChangesAsync();
             return Ok("User added");
-
         }
 
     }

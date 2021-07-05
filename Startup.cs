@@ -1,21 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using api.Controllers;
 using api.Data;
-using api.Entities;
 using api.Helper;
 using api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace api
@@ -37,10 +29,10 @@ namespace api
             services.AddControllers();
             services.AddScoped<OpenTokService>();
             services.Configure<TokboxSettings>(Configuration.GetSection("TokboxSettings"));
-                        services.AddDbContext<DataContext>(options =>
+            services.AddDbContext<DataContext>(options =>
            {
                // options.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-               // options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
+            //    options.UseNpgsql(config.GetConnectionString("DefaultConnection"));
                var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
                string connStr;
